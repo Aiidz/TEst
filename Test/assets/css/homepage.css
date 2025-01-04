@@ -1,10 +1,10 @@
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling for the entire page */
+}
+
 body {
     background-color: #e5e4e3;
     margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
     font-family: 'Azeret Mono', monospace;
     position: relative;
 }
@@ -68,8 +68,8 @@ body {
 
 .polaroid {
     position: absolute;
-    top: 20%;
-    right: 10%;
+    top: -80%;
+    right: 13%;
     transform: rotate(10deg);
     z-index: 1;
 }
@@ -83,6 +83,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 10px; /* Add margin to space out the images */
+
+}
+
+.polaroid-frame::after {
+    content: '2024-2025';
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    color: rgb(90, 86, 86);
+    font-family: 'Delicious Handrawn', cursive;
 }
 
 .polaroid-frame img {
@@ -90,6 +103,7 @@ body {
     height: auto;
     max-height: 80%;
     transition: filter 0.5s ease;
+    padding-bottom: 70px;
 }
 
 .corner-text {
@@ -98,7 +112,7 @@ body {
     line-height: 0.15;
     font-weight: 900;
     position: absolute;
-    bottom: -60px;
+    top: -500px;
     left: 140px;
     z-index: 2;
 }
@@ -113,34 +127,33 @@ body {
 
 .gallery {
     display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    scroll-snap-type: y mandatory;
-    height: 100vh;
+    flex-direction: row; /* Align items vertically */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
     width: 100vw;
-    margin-top: 120vh;
     padding: 20px;
-    background-color: #fff;
+    background-color: #e5e4e3;
+    margin-top: 800px; /* Adjust margin as needed */
 }
 
-.gallery-item {
-    flex: 0 0 100vh;
-    width: 100vw;
-    margin-bottom: 10px;
-    transition: transform 0.3s;
+.polaroid-frames {
+    width: 300px; /* Adjust the width */
+    height: 350px; /* Adjust the height */
+    padding: 10px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     scroll-snap-align: start;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 20px; /* Add margin to space out the images */
 }
 
-.gallery-item img {
-    max-width: 100%;
-    max-height: 100%;
-    display: block;
-    object-fit: contain;
-}
-
-.gallery-item:hover {
-    transform: scale(1.05);
+.polaroid-frames img {
+    width: 98%;
+    height: 70%;
+    max-height: 80%;
+    transition: filter 0.5s ease;
+    padding-bottom: 70px;
 }
