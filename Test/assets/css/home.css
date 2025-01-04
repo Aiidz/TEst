@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=General+Sans:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'General Sans', sans-serif;
+    background-color: #ffffff;
+    background-image: linear-gradient(to right, #e0e0e0 1px, transparent 1px);
+    background-size: 150px 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+nav {
+    width: 100%;
+    margin-top: 20px; /* Adjusted margin-top to move up */
+    background-color: rgba(255, 255, 255, 0); /* Changed background color to fully transparent */
+    color: #333;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between; /* Space between logo and hamburger menu */
+    align-items: center;
+    z-index: 10; /* Ensure nav is on top */
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 24px;
+    cursor: pointer;
+    margin-right: 100px; /* Move the hamburger menu slightly to the left */
+    transition: transform 0.3s ease;
+    z-index: 20; /* Ensure hamburger menu is on top */
+}
+
+.hamburger-menu .bar {
+    width: 38px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:checked + .hamburger-menu .bar:nth-child(1) {
+    transform: rotate(40deg) translate(5px, 5px);
+    background-color: #ffffff;
+}
+
+.menu-toggle:checked + .hamburger-menu .bar:nth-child(2) {
+    transform: rotate(-40deg) translate(5px, -5px);
+    background-color: #ffffff;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes overlayFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes overlayFadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.nav-list {
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: -20px;
+    right: 90px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px; /* Added border radius */
+    overflow: hidden;
+    width: 530px; /* Set a fixed width */
+    height: 400px; /* Set a fixed height */
+    justify-content: flex-start; /* Center the items vertically */
+    align-items: flex-start; /* Align items to the left */
+    padding-left: 20px; /* Add padding to the left */
+    z-index: 15; /* Ensure nav-list is below the hamburger menu */
+}
+
+.nav-list li {
+    padding: 5px 20px;
+    width: 100%; /* Ensure the list items take full width */
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: hsl(0, 16%, 85%) !important; /* Change text color to white for better contrast */
+    font-size: 3.5rem; /* Make the text bigger */
+    display: block; /* Ensure the link takes full width */
+    text-align: left;
+    margin:-5px;
+}
+
+.menu-toggle:checked + .hamburger-menu + .nav-list {
+    display: flex;
+    animation: fadeIn 0.5s ease-in-out; /* Add fade-in animation */
+}
+
+.menu-toggle:not(:checked) + .hamburger-menu + .nav-list {
+    animation: fadeOut 0.5s ease-in-out; /* Add fade-out animation */
+    animation-fill-mode: forwards; /* Ensure the element stays hidden after animation */
+}
+
+.nav-list li {
+    padding: 10px 20px;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5); /* Translucent background */
+    z-index: 10; /* Ensure overlay is below nav-list but above other content */
+    display: none;
+}
+
+.menu-toggle:checked ~ .overlay {
+    display: block;
+    animation: overlayFadeIn 0.5s ease-in-out; /* Add fade-in animation */
+}
+
+.menu-toggle:not(:checked) ~ .overlay {
+    display: block;
+    animation: overlayFadeOut 0.5s ease-in-out; /* Add fade-out animation */
+    animation-fill-mode: forwards; /* Ensure the element stays hidden after animation */
+}
+
+.content h1 {
+    font-size: 14rem;
+    font-weight: normal; /* Increased font size */
+    margin: 0;
+    margin-top: 1px;
+    letter-spacing: -4px; 
+}
+
+.get-started {
+    display: block;
+    font-weight: 300;
+    margin: -35px auto; /* Center the button horizontally */
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    color: #afafaf; /* Gray text color */
+    background: none; /* No background */
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: color 0.3s ease;
+    z-index: 20; /* Ensure the button is above the overlay */
+    position: relative; /* Ensure z-index is applied */
+}
+
+.get-started:hover {
+    color: #000000; /* Turn black on hover */
+}
+
+.logo-link {
+    text-decoration: none; /* Remove underline */
+}
+
+.logo {
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 20; /* Ensure the button is above the overlay */
+    position: relative;
+    color: #333;
+    margin-left: 40px;
+    margin-top: -10px; /* Adjusted margin-top to move up */
+    /* Add any additional styles for the logo */
+}
+
+.logo-link:hover .logo {
+    color: #000; /* Change color on hover */
+}
