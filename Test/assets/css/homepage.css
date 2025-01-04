@@ -1,12 +1,12 @@
 body {
-    background-color: #e5e4e3; /* Cream background */
+    background-color: #e5e4e3;
     margin: 0;
     height: 100vh;
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start; /* Align items to the top */
+    align-items: flex-start;
     font-family: 'Azeret Mono', monospace;
-    position: relative; /* Ensure the polaroid is positioned relative to the body */
+    position: relative;
 }
 
 .vertical-nav {
@@ -36,10 +36,10 @@ body {
 }
 
 .vertical-nav ul li a {
-    position: relative; /* Add this line */
+    position: relative;
     text-decoration: none;
     color: #313030;
-    font-family: 'Exo', sans-serif; /* Change font to Exo */
+    font-family: 'Exo', sans-serif;
     padding-right: 50px;
     font-weight: 520;
     font-size: 1.7rem;
@@ -47,32 +47,31 @@ body {
 }
 
 .vertical-nav ul li a:hover {
-    color: #a8a8a6; /* Change color on hover */
+    color: #a8a8a6;
 }
 
 .vertical-nav ul li a.home:hover::after {
-    content: "you're here"; /* Add this line */;
-    position: absolute; /* Add this line */
-    top: -7px; /* Adjust this line to position the tooltip above the link */
-    right: 70%; /* Add this line */
-    transform: translateX(-50%); /* Add this line */
-    background-color: none; /* Add this line */
-    color: #313030; /* Add this line */
-    padding: 5px; /* Add this line */
-    border-radius: 5px; /* Add this line */
-    white-space: nowrap; /* Add this line */
-    z-index: 3; /* Add this line */
-    pointer-events: pointer; /* Add this line to ensure the tooltip doesn't interfere with pointer events */
-    font-family: 'Delicious Handrawn', cursive; /* Add this line to change the font */
-
+    content: "you're here";
+    position: absolute;
+    top: -7px;
+    right: 70%;
+    transform: translateX(-50%);
+    background-color: none;
+    color: #313030;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+    z-index: 3;
+    pointer-events: pointer;
+    font-family: 'Delicious Handrawn', cursive;
 }
 
 .polaroid {
     position: absolute;
     top: 20%;
     right: 10%;
-    transform: rotate(10deg); /* Slightly slant the polaroid */
-    z-index: 1; /* Ensure the polaroid is below the text */
+    transform: rotate(10deg);
+    z-index: 1;
 }
 
 .polaroid-frame {
@@ -91,58 +90,28 @@ body {
     height: auto;
     max-height: 80%;
     transition: filter 0.5s ease;
-
 }
 
 .corner-text {
     font-size: 5rem;
     color: #333;
     line-height: 0.15;
-    font-weight: 900; /* Ensure bold font weight */
+    font-weight: 900;
     position: absolute;
-    bottom: -60px; /* Position at the top */
-    left: 140px; /* Position at the left */
-    z-index: 2; /* Ensure the text is above the polaroid */
+    bottom: -60px;
+    left: 140px;
+    z-index: 2;
 }
 .corner-text::before {
-    content: "➜"; /* Add down arrow */
+    content: "➜";
     transform: rotate(90deg);
     position: absolute;
-    font-size: 6rem; /* Match the font size of the corner text */
-    margin-left: -100px; /* Space between arrow and text */
-    bottom: 115px; /* Position the arrow at the bottom of the screen */
-
-
+    font-size: 6rem;
+    margin-left: -100px;
+    bottom: 115px;
 }
+
 .gallery {
-    display: flex;
-    flex-direction: column; /* Change to column for vertical alignment */
-    overflow-y: auto; /* Change to vertical scrolling */
-    scroll-snap-type: y mandatory; /* Change to vertical snap */
-    height: 100vh; /* Make the gallery take up the full viewport height */
-    width: 100vw;
-    margin-top: 120vh; /* Adjust this value as needed to push the gallery below the viewport height */
-    padding: 20px;
-    background-color: #fff;
-}
-
-.gallery-item {
-    flex: 0 0 100vh; /* Adjust to take up full viewport height */
-    width: 100vw; /* Adjust to take up full viewport width */
-    margin-bottom: 10px; /* Change to margin-bottom for vertical spacing */
-    transition: transform 0.3s;
-    scroll-snap-align: start;
-}
-
-.gallery-item img {
-    width: 70%;
-    height: 70%;
-    display: block;
-}
-
-.gallery-item:hover {
-    transform: scale(1.1);
-}.gallery {
     display: flex;
     flex-direction: column;
     overflow-y: auto;
@@ -161,17 +130,17 @@ body {
     transition: transform 0.3s;
     scroll-snap-align: start;
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center;
+    align-items: center;
 }
 
 .gallery-item img {
     max-width: 100%;
     max-height: 100%;
     display: block;
-    object-fit: contain; /* Ensure the image fits within the container */
+    object-fit: contain;
 }
 
 .gallery-item:hover {
-    transform: scale(1.05); /* Slightly reduce the scale effect for a more minimalist look */
+    transform: scale(1.05);
 }
