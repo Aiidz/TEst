@@ -20,7 +20,7 @@ body {
 .logo {
     font-size: 1.5rem;
     cursor: pointer;
-    z-index: 20;
+    z-index: 23;
     position: absolute;
     color: #333;
     margin-left: 60px;
@@ -42,7 +42,7 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     padding-top: 20px;
-    z-index: 2;
+    z-index: 20;
 }
 
 .vertical-nav ul {
@@ -54,7 +54,7 @@ body {
 }
 
 .vertical-nav ul li {
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 .vertical-nav ul li a {
@@ -103,10 +103,22 @@ body {
         opacity: 1; /* End with fully visible */
     }
 }
+.corner-text1 {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 0;
+    font-weight: 900 !important;
+    position: absolute;
+    top: 45px;
+    left: 60px; 
+    z-index: 2;
+    animation: fadeIn 1s forwards; /* Apply fade-in animation */
+    animation-delay: 2s;
+}
 
 .polaroid {
     position: absolute;
-    top: -34%;
+    top: -17%;
     right: 13%;
     transform: rotate(6deg);
     z-index: 1;
@@ -210,11 +222,12 @@ body {
     width: 100vw;
     background-color: #e5e4e3;
     margin-top: 800px; /* Adjust margin as needed */
+
 }
 
 .polaroid-frames {
-    width: 400px; /* Adjust the width */
-    height: 450px; /* Adjust the height */
+    width: 350px; /* Adjust the width */
+    height: 400px; /* Adjust the height */
     padding: 10px;
     background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -223,6 +236,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: 90px; /* Default margin */
+    z-index: 20;
 }
 
 .polaroid-frames:nth-child(odd) {
@@ -241,12 +255,176 @@ body {
     width: 98%;
     height: 70%;
     max-height: 80%;
-    padding-bottom: 70px;
+    padding-bottom: 100px;
 }
 
 .polaroid-frames:hover {
     transform: scale(1.1) rotate(10deg);
-     /* Slightly increase the size */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase the shadow */
     transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
 }
+.i1 {
+    position: absolute;
+    top:600px;
+    right: 60px;
+}
+.i2 {
+    position: absolute;
+    top:500px;
+    left: 70px;
+}
+.i3 {
+    position: absolute;
+    top:1100px;
+    right: 100px;
+}
+.i4 {
+    position: absolute;
+    top:1200px;
+    left: 60px;
+}
+.i5 {
+    position: absolute;
+    top:1300px;
+    right: 500px;
+}
+.i6 {
+    position: absolute;
+    top:1600px;
+    right: 800px;
+}
+.i7 {
+    position: absolute;
+    top:1500px;
+    left: 120px;
+}
+.i8 {
+    position: absolute;
+    top:1700px;
+    right: 650px;
+}
+.i9 {
+    position: absolute;
+    top:70px;
+    right: 100px;
+}
+.i10 {
+    position: absolute;
+    top:600px;
+    right: 60px;
+}
+.i11 {
+    position: absolute;
+    bottom:2200px;
+    right: 90px;
+}
+.i12 {
+    position: absolute;
+    bottom:2000px;
+    left: 50px;
+}
+.i13 {
+    position: absolute;
+    bottom:1900px;
+    left: 500px;
+}
+.i14 {
+    position: absolute;
+    bottom:1500px;
+    right: 400px;
+}
+.i15 {
+    position: absolute;
+    bottom:1300px;
+    left: 70px;
+}
+.i16 {
+    position: absolute;
+    bottom:1200px;
+    right: 90px;
+}
+.i17 {
+    position: absolute;
+    bottom:1000px;
+    left: 700px;
+}
+.i18 {
+    position: absolute;
+    bottom:800px;
+    right: 70px;
+}
+.i19 {
+    position: absolute;
+    bottom:600px;
+    left: 60px;
+}
+.i20 {
+    position: absolute;
+    bottom:800px;
+    right: 400px;
+}
+.i21 {
+    position: absolute;
+    bottom:100px;
+    left: 70px;
+}
+
+@media (max-width: 768px) {
+    .vertical-nav ul li a {
+        position: relative;
+        font-size: 3rem;
+    }
+    .corner-text1 {
+        font-size: 2rem;
+    }
+    .logo {
+        font-size: 2rem;
+    }
+    .corner-text {
+        font-size: 5rem;
+        top: 300px;
+        left: 10px;  
+    }
+    .corner-text::after {
+        content: "➜";
+        transform: rotate(90deg);
+        position: absolute;
+        font-size: 6rem;
+        margin-left: 750px;
+        bottom: 110px;
+        animation: rotateSlideDownFadeIn 2s ease-in-out forwards;  
+    }
+    .polaroid {
+        top: -5%;
+        right: -150%;
+    }
+    .polaroid-frame {
+        width: 600px;
+        height: 650px;
+        justify-content: center;
+        align-items: center;
+        position: relative; 
+    }
+    .polaroid-frames {
+        width: 450px; /* Adjust the width */
+        height: 500px;
+        z-index: 10;
+    }
+    .gallery {
+        position: relative;
+        flex-direction: column; /* Align items vertically */
+        justify-content: center; /* Align items to the start horizontally */
+        align-items: flex-start; /* Align items to the start vertically */
+/* Adjust margin as needed */
+        top:700px;
+        left: 200px;   
+    }
+
+    .i1, .i2, .i3, .i4, .i5, .i6, .i7, .i8, .i9, .i10, .i11, .i12, .i13, .i14, .i15, .i16, .i17, .i18, .i19, .i20, .i21 {
+        margin: 10px;
+    }
+    
+    
+}
+
+
