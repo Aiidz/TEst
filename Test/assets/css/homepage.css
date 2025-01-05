@@ -1,5 +1,9 @@
 html {
     scroll-behavior: smooth; /* Enable smooth scrolling for the entire page */
+    border-radius: 50%;
+}
+*::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
 }
 
 body {
@@ -9,11 +13,29 @@ body {
     position: relative;
 }
 
+.logo-link {
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 20;
+    position: absolute;
+    color: #333;
+    margin-left: 60px;
+    margin-top: 10px;
+    font-family: 'Azeret Mono', monospace;
+}
+
+.logo-link:hover .logo {
+    color: #000;
+}
 .vertical-nav {
     position: fixed;
     top: 0;
     right: 0;
-    width: 200px;
+    width: 100%;
     height: 100%;
     background-color: none;
     display: flex;
@@ -44,6 +66,14 @@ body {
     font-weight: 520;
     font-size: 1.7rem;
     transition: color 0.3s ease;
+    opacity: 0; /* Start with invisible */
+    animation: fadeIn 1s forwards; /* Apply fade-in animation */
+    animation-delay: 2s; }
+
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* End with fully visible */
+    }
 }
 
 .vertical-nav ul li a:hover {
@@ -64,26 +94,36 @@ body {
     z-index: 3;
     pointer-events: pointer;
     font-family: 'Delicious Handrawn', cursive;
+    opacity: 0; /* Start with invisible */
+    animation: fadeIn 1s forwards; /* Apply fade-in animation */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* End with fully visible */
+    }
 }
 
 .polaroid {
     position: absolute;
-    top: -80%;
+    top: -34%;
     right: 13%;
-    transform: rotate(10deg);
+    transform: rotate(6deg);
     z-index: 1;
 }
 
 .polaroid-frame {
-    width: 300px;
-    height: 350px;
+    width: 400px;
+    height: 450px;
     padding: 10px;
     background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 8px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 10px; /* Add margin to space out the images */
+    position: relative;
+    animation: fadeInSlideUp 2s ease-in-out forwards;
 
 }
 
@@ -102,8 +142,19 @@ body {
     width: 98%;
     height: auto;
     max-height: 80%;
-    transition: filter 0.5s ease;
     padding-bottom: 70px;
+    transition: opacity 0.5s ease-in-out;
+    animation: fadeInSlideUp 2s ease-in-out forwards;
+}
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .corner-text {
@@ -112,9 +163,11 @@ body {
     line-height: 0.15;
     font-weight: 900;
     position: absolute;
-    top: -500px;
+    top: -470px;
     left: 140px;
     z-index: 2;
+    animation: slideDownFadeIn 2s ease-in-out forwards;
+
 }
 .corner-text::before {
     content: "➜";
@@ -123,23 +176,45 @@ body {
     font-size: 6rem;
     margin-left: -100px;
     bottom: 115px;
+    animation: rotateSlideDownFadeIn 2s ease-in-out forwards;
+
+}
+
+@keyframes slideDownFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes rotateSlideDownFadeIn {
+    0% {
+        opacity: 0;
+        transform: rotate(90deg) translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(90deg) translateY(0);
+    }
 }
 
 .gallery {
     display: flex;
     flex-direction: row; /* Align items vertically */
     flex-wrap: wrap; /* Allow items to wrap to the next line */
-    justify-content: center; /* Center the items horizontally */
-    align-items: center; /* Center the items vertically */
+    justify-content: center; /* Align items to the start horizontally */
+    align-items: flex-start; /* Align items to the start vertically */
     width: 100vw;
-    padding: 20px;
     background-color: #e5e4e3;
     margin-top: 800px; /* Adjust margin as needed */
 }
 
 .polaroid-frames {
-    width: 300px; /* Adjust the width */
-    height: 350px; /* Adjust the height */
+    width: 400px; /* Adjust the width */
+    height: 450px; /* Adjust the height */
     padding: 10px;
     background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -147,13 +222,31 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px; /* Add margin to space out the images */
+    margin: 90px; /* Default margin */
+}
+
+.polaroid-frames:nth-child(odd) {
+    margin: 60px; /* Different margin for odd elements */
+}
+
+.polaroid-frames:nth-child(even) {
+    margin: 130px; /* Different margin for even elements */
+}
+
+.polaroid-frames:nth-child(3n) {
+    margin: 90px; /* Different margin for every third element */
 }
 
 .polaroid-frames img {
     width: 98%;
     height: 70%;
     max-height: 80%;
-    transition: filter 0.5s ease;
     padding-bottom: 70px;
+}
+
+.polaroid-frames:hover {
+    transform: scale(1.1) rotate(10deg);
+     /* Slightly increase the size */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase the shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
 }

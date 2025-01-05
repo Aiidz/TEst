@@ -128,11 +128,14 @@ nav {
 
 .nav-list li a {
     text-decoration: none;
-    color: hsl(0, 16%, 85%) !important;
+    color: hsl(0, 1%, 29%) !important;
     font-size: 3.5rem;
     display: block;
     text-align: left;
     margin:-5px;
+}
+.nav-list li a.home-link {
+    color: white !important; /* Specific color for Home link */
 }
 
 .menu-toggle:checked + .hamburger-menu + .nav-list {
@@ -143,15 +146,6 @@ nav {
 .menu-toggle:not(:checked) + .hamburger-menu + .nav-list {
     animation: fadeOut 0.5s ease-in-out;
     animation-fill-mode: forwards;
-}
-
-.nav-list li {
-    padding: 10px 20px;
-}
-
-.nav-list li a {
-    text-decoration: none;
-    color: #333;
 }
 
 .overlay {
@@ -182,7 +176,19 @@ nav {
     margin: 0;
     margin-top: 1px;
     letter-spacing: -4px;
+    animation: FadeInn 3s ease-in-out;
 }
+@keyframes FadeInn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); /* Start slightly below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at original position */
+    }
+}
+
 
 .get-started {
     display: block;
