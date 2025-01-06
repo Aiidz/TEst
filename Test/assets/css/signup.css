@@ -66,12 +66,15 @@ body{
 .wrapper .button{
 width: 80%;
 height: 45px;
-margin-top: 40px;
+padding: 10px;
 background: white;
+display: inline-block;
+text-decoration: 0;
 border: none;
 color: black;
 border-radius: 40px;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+letter-spacing: 1px;
 cursor: pointer;
 font-size: 16px;
 font-weight: 600;
