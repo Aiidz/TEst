@@ -43,6 +43,7 @@ body {
     align-items: flex-start;
     padding-top: 20px;
     z-index: 2;
+    pointer-events: none;
 }
 
 .vertical-nav ul {
@@ -68,7 +69,9 @@ body {
     transition: color 0.3s ease;
     opacity: 0; /* Start with invisible */
     animation: fadeIn 1s forwards; /* Apply fade-in animation */
-    animation-delay: 1s; }
+    animation-delay: 1s; 
+    pointer-events: auto;
+  }
 
 @keyframes fadeIn {
     to {
