@@ -187,6 +187,119 @@ body {
     animation: slideDownFadeIn 2s ease-in-out forwards;
 
 }
+.popup {
+    position: fixed;
+    bottom: 10px;
+    right: 50px;
+    z-index: 2;
+    cursor: pointer;
+}
+.popup-container {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 30;
+    animation: fadeIn 1s forwards; /* Apply fade-in animation */
+}
+
+.popup-container:hover::after {
+    content: "Upload Image";
+    position: absolute;
+    font-size: 30px;
+    bottom: 6px;
+    right: -10px;
+    transform: translateX(-50%);
+    background-color: none;
+    color: #313030;
+    border-radius: 5px;
+    white-space: nowrap;
+    z-index: 3;
+    pointer-events: pointer;
+    font-family: 'Delicious Handrawn', cursive;
+    opacity: 0; /* Start with invisible */
+    animation: fadeIn 1s forwards; /* Apply fade-in animation */
+}
+
+/* Hide checkbox */
+.popup-checkbox {
+    display: none;
+}
+
+/* Popup Overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Show overlay when checkbox is checked */
+.popup-checkbox:checked ~ .popup-overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Popup Content */
+.popup-content {
+    align-content: center;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+    height: 400px;
+}
+
+.popup-content h2 {
+    font-size: 3rem;
+    font-family: 'Delicious Handrawn', cursive;
+    padding-top: 50px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.popup-content input[type="file"] {
+    padding-left: 75px;
+    display: block;
+    margin: 60px auto;
+}
+
+/* Close Button */
+.close-btn {
+    margin-top: 20px;
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Image Trigger */
+.image-trigger {
+    cursor: pointer;
+}
+.black-square {
+    width: 98%;
+    height: 70%;
+    background-color: rgb(138, 138, 138);
+    margin: 20px auto;
+}
+  
 .corner-text::before {
     content: "➜";
     transform: rotate(90deg);
@@ -375,19 +488,6 @@ body {
     left: 70px;
 }
 
-.menu-toggle:checked + .hamburger-menu + .shutter-overlay {
-    display: block;
-    animation: flash 1s ease-in-out;
-    animation-fill-mode: forwards;
-}
-
-.menu-toggle:checked + .hamburger-menu + .shutter-overlay + .shutter-popup {
-    display: block;
-    animation: popupFadeIn 0.5s ease-in-out 1s; /* Add delay to sync with overlay animation */
-    animation-fill-mode: forwards;
-    opacity: 1; /* Ensure popup becomes visible after animation */
-    transform: translate(-50%, -50%) scale(1); /* Reset to normal scale */
-}
 @media (max-width: 768px) {
     .vertical-nav ul li a {
         position: relative;

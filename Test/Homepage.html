@@ -30,11 +30,31 @@
             <img src="assets/img/1.jpg" alt="Polaroid Image">
         </div>
     </div>
-    
+    <div class="popup-container">
+        <!-- Image Trigger -->
+        <label for="popup-checkbox" class="image-trigger">
+            <img src="assets/img/circle.png" alt="Click to upload" style="width: 30px; height: auto;">
+        </label>
+
+        <!-- Hidden checkbox to toggle the popup -->
+        <input type="checkbox" id="popup-checkbox" class="popup-checkbox">
+
+        <!-- Popup Overlay -->
+        <div class="popup-overlay">
+            <div class="popup-content"> 
+                <div class="black-square">
+                    <h2>Upload Your Memories</h2>
+                    <input type="file" name="file-upload">
+                </div> 
+                <label for="popup-checkbox" class="close-btn">Close</label>   
+            </div>
+        </div>
+    </div>
     <div class="corner-text">
         <h1> COMSCI</h1>
         <h1> DASHTWO</h1>
     </div>
+    
     <section class="gallery">
         <div class="polaroid-frames">
             <img src="assets/img/Screenshot 2024-08-18 180049.png" alt="Image 1">
@@ -102,7 +122,6 @@
         <img src="assets/img/3.png" alt="An image" class="i20">
         <img src="assets/img/6.png" alt="An image" class="i21">
 
-        <!-- Add more gallery items as needed -->
     </section>
     <div style="background-color: transparent; width: 100%; height: 100vh; overflow: hidden;">
         <iframe src="footer-content.html" style="border: none; width: 100%; height: 100%; background-color: transparent;" loading="lazy"></iframe>

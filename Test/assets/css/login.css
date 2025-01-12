@@ -27,6 +27,7 @@ body{
     line-height: 2;
     font-family: 'Delicious Handrawn', cursive;
     margin-bottom: -40px;
+    z-index: 2;
 }
 .corner-text {
     font-size: 3rem;
@@ -34,6 +35,7 @@ body{
     line-height: 1;
     font-weight: 900 !important;
     margin-top: 100;
+    z-index: 2;
 }
 
 
@@ -105,10 +107,12 @@ font-weight: 600;
     text-align: center;
     text-decoration: none;
     border-radius: 5px;
+    z-index: 3;
 }
 
 .button:hover {
     color: #a8a8a6;
+    z-index: 2;
 }
 
 @keyframes fadeIn {
