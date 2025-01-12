@@ -4,16 +4,21 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    background-color: #e5e4e3;
+
 }
 
 body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: whitesmoke;
+    background-color: #e5e4e3;
     min-height: 100vh;
     background-size: cover;
     background-position: center;
+    animation: fadeIn 2s ease-out;
+    padding: 30px;
+
 }
 
 .wrapper{
@@ -105,5 +110,13 @@ input[type="date"]::webkit-calendar-picker-indicator {
     border-radius: 5px;
     padding: 5px;
 
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 

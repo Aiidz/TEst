@@ -58,6 +58,10 @@ body {
     margin: 10px 0;
 }
 
+.vertical-nav ul li a.out:hover {
+  color: #cc1f1f;
+}
+
 .vertical-nav ul li a {
     position: relative;
     text-decoration: none;

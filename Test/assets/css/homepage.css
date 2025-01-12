@@ -79,6 +79,10 @@ body {
     }
 }
 
+.vertical-nav ul li a.out:hover {
+    color: #cc1f1f;
+}
+
 .vertical-nav ul li a:hover {
     color: #a8a8a6;
 }
@@ -100,7 +104,6 @@ body {
     opacity: 0; /* Start with invisible */
     animation: fadeIn 1s forwards; /* Apply fade-in animation */
 }
-
 @keyframes fadeIn {
     to {
         opacity: 1; /* End with fully visible */

@@ -1,25 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&display=swap');
 
 *{
-    margin: 0;
+    margin: 0px;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    
 }
 
 body{
     display: flex;
-    /* justify-content: right; */
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
     align-content: center;
-    align-items: center;
-    background-color: whitesmoke;
-    /* padding-right: 250px; */
+    align-items: flex-start;
+    margin-left: 8rem;
+    background-color: #e5e4e3;
+    font-family: 'Azeret Mono', monospace;
     height: 100vh;
-    /* min-height: 100vh;    */
-    
-    
+    animation: fadeIn 2s ease-out;
+
  }
+
+.left{
+    font-size: 3rem;
+    color: #333;
+    line-height: 2;
+    font-family: 'Delicious Handrawn', cursive;
+    margin-bottom: -40px;
+}
+.corner-text {
+    font-size: 3rem;
+    color: #333;
+    line-height: 1;
+    font-weight: 900 !important;
+    margin-top: 100;
+}
 
 
 .LogIn{
@@ -35,6 +50,7 @@ body{
 
 .LogIn h1{
     text-align: center;
+    font-family: "Poppins", sans-serif;
     font-size: 36px;
 }
 
@@ -79,6 +95,31 @@ cursor: pointer;
 font-size: 16px;
 font-weight: 600;
 }
+
+.button {
+    display: inline-block;
+    margin: 15px;
+    padding: 15px 30px;
+    color: #333;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+    color: #a8a8a6;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
 
 
