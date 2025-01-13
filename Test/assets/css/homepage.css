@@ -1,9 +1,9 @@
 html {
-    scroll-behavior: smooth; /* Enable smooth scrolling for the entire page */
+    scroll-behavior: smooth; 
     border-radius: 50%;
 }
 *::-webkit-scrollbar {
-    display: none; /* Safari and Chrome */
+    display: none; 
 }
 
 body {
@@ -67,15 +67,15 @@ body {
     font-weight: 520;
     font-size: 1.7rem;
     transition: color 0.3s ease;
-    opacity: 0; /* Start with invisible */
-    animation: fadeIn 1s forwards; /* Apply fade-in animation */
+    opacity: 0; 
+    animation: fadeIn 1s forwards; 
     animation-delay: 2s; 
     pointer-events: auto;
 }
 
 @keyframes fadeIn {
     to {
-        opacity: 1; /* End with fully visible */
+        opacity: 1; 
     }
 }
 
@@ -101,12 +101,12 @@ body {
     z-index: 3;
     pointer-events: pointer;
     font-family: 'Delicious Handrawn', cursive;
-    opacity: 0; /* Start with invisible */
-    animation: fadeIn 1s forwards; /* Apply fade-in animation */
+    opacity: 0; 
+    animation: fadeIn 1s forwards;
 }
 @keyframes fadeIn {
     to {
-        opacity: 1; /* End with fully visible */
+        opacity: 1;
     }
 }
 .corner-text1 {
@@ -118,7 +118,7 @@ body {
     top: 45px;
     left: 60px; 
     z-index: 2;
-    animation: fadeIn 1s forwards; /* Apply fade-in animation */
+    animation: fadeIn 1s forwards; 
     animation-delay: 2s;
 }
 
@@ -139,7 +139,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px; /* Add margin to space out the images */
+    margin: 10px;
     position: relative;
     animation: fadeInSlideUp 2s ease-in-out forwards;
 
@@ -199,7 +199,7 @@ body {
     right: 10px;
     bottom: 10px;
     z-index: 30;
-    animation: fadeIn 1s forwards; /* Apply fade-in animation */
+    animation: fadeIn 1s forwards;
 }
 
 .popup-container:hover::after {
@@ -216,16 +216,16 @@ body {
     z-index: 3;
     pointer-events: pointer;
     font-family: 'Delicious Handrawn', cursive;
-    opacity: 0; /* Start with invisible */
-    animation: fadeIn 1s forwards; /* Apply fade-in animation */
+    opacity: 0; 
+    animation: fadeIn 1s forwards;
 }
 
-/* Hide checkbox */
+
 .popup-checkbox {
     display: none;
 }
 
-/* Popup Overlay */
+
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -241,13 +241,11 @@ body {
     align-items: center;
 }
 
-/* Show overlay when checkbox is checked */
 .popup-checkbox:checked ~ .popup-overlay {
     visibility: visible;
     opacity: 1;
 }
 
-/* Popup Content */
 .popup-content {
     align-content: center;
     background-color: white;
@@ -272,7 +270,6 @@ body {
     margin: 60px auto;
 }
 
-/* Close Button */
 .close-btn {
     margin-top: 20px;
     display: inline-block;
@@ -289,7 +286,6 @@ body {
     background-color: #0056b3;
 }
 
-/* Image Trigger */
 .image-trigger {
     cursor: pointer;
 }
@@ -334,19 +330,19 @@ body {
 
 .gallery {
     display: flex;
-    flex-direction: row; /* Align items vertically */
-    flex-wrap: wrap; /* Allow items to wrap to the next line */
-    justify-content: center; /* Align items to the start horizontally */
-    align-items: flex-start; /* Align items to the start vertically */
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: flex-start; 
     width: 100vw;
     background-color: #e5e4e3;
-    margin-top: 800px; /* Adjust margin as needed */
+    margin-top: 800px; 
 
 }
 
 .polaroid-frames {
-    width: 350px; /* Adjust the width */
-    height: 400px; /* Adjust the height */
+    width: 350px;
+    height: 400px; 
     padding: 10px;
     background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -354,20 +350,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 90px; /* Default margin */
-    z-index: 20;
+    margin: 90px; 
+    z-index: 10;
 }
 
 .polaroid-frames:nth-child(odd) {
-    margin: 60px; /* Different margin for odd elements */
+    margin: 60px; 
 }
 
 .polaroid-frames:nth-child(even) {
-    margin: 130px; /* Different margin for even elements */
+    margin: 130px;
 }
 
 .polaroid-frames:nth-child(3n) {
-    margin: 90px; /* Different margin for every third element */
+    margin: 90px;
 }
 
 .polaroid-frames img {
@@ -379,9 +375,10 @@ body {
 
 .polaroid-frames:hover {
     transform: scale(1.1) rotate(10deg);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase the shadow */
-    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s; 
 }
+
 .i1 {
     position: absolute;
     top:600px;
@@ -416,11 +413,6 @@ body {
     position: absolute;
     top:1500px;
     left: 120px;
-}
-.i8 {
-    position: absolute;
-    top:1700px;
-    right: 650px;
 }
 .i9 {
     position: absolute;
@@ -461,11 +453,6 @@ body {
     position: absolute;
     bottom:1200px;
     right: 90px;
-}
-.i17 {
-    position: absolute;
-    bottom:1000px;
-    left: 700px;
 }
 .i18 {
     position: absolute;
@@ -525,16 +512,15 @@ body {
         position: relative; 
     }
     .polaroid-frames {
-        width: 450px; /* Adjust the width */
+        width: 450px; 
         height: 500px;
         z-index: 10;
     }
     .gallery {
         position: relative;
-        flex-direction: column; /* Align items vertically */
-        justify-content: center; /* Align items to the start horizontally */
-        align-items: flex-start; /* Align items to the start vertically */
-/* Adjust margin as needed */
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: flex-start;
         top:700px;
         left: 200px;   
     }
