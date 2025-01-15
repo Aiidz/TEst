@@ -15,6 +15,7 @@ body {
 
 .logo-link {
     text-decoration: none;
+    pointer-events: auto;
 }
 
 .logo {
@@ -206,7 +207,7 @@ body {
     content: "Upload Image";
     position: absolute;
     font-size: 30px;
-    bottom: 6px;
+    bottom: 20px;
     right: -10px;
     transform: translateX(-50%);
     background-color: none;

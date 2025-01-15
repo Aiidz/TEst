@@ -1,9 +1,9 @@
 html {
-    scroll-behavior: smooth; /* Enable smooth scrolling for the entire page */
+    scroll-behavior: smooth;
     border-radius: 50%;
 }
 *::-webkit-scrollbar {
-    display: none; /* Safari and Chrome */
+    display: none;
 }
 
 body {
@@ -45,6 +45,7 @@ body {
 
 .logo-link {
     text-decoration: none;
+    pointer-events: auto;
 }
 
 .logo {
@@ -74,6 +75,7 @@ body {
     align-items: flex-start;
     padding-top: 20px;
     z-index: 2;
+    pointer-events: none;
 }
 
 .vertical-nav ul {
@@ -97,13 +99,15 @@ body {
     font-weight: 510;
     font-size: 1.7rem;
     transition: color 0.3s ease;
-    opacity: 0; /* Start with invisible */
+    opacity: 0;
     animation: fadeIn 1s forwards; 
+    pointer-events: auto;
+
  }
 
 @keyframes fadeIn {
     to {
-        opacity: 1; /* End with fully visible */
+        opacity: 1;
     }
 }
 
@@ -129,13 +133,13 @@ body {
     z-index: 3;
     pointer-events: pointer;
     font-family: 'Delicious Handrawn', cursive;
-    opacity: 0; /* Start with invisible */
+    opacity: 0; 
     animation: fadeIn 1s forwards;
 }
 
 @keyframes fadeIn {
     to {
-        opacity: 1; /* End with fully visible */
+        opacity: 1;
     }
 }
 .corner-text {
@@ -170,7 +174,6 @@ body {
 }
 
 .social-link:hover {
-    /* Change to your desired hover color */
     transform: scale(1.1);
 }
 
@@ -179,15 +182,15 @@ body {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 40%; /* Center the line vertically */
+    bottom: 40%;
     height: 3px;
     background-color: #333;
-    width: 0; /* Start with no width */
+    width: 0;
     transition: width 0.2s ease;
 }
 
 .social-link:hover::after {
-    width: 100%; /* Expand to full width of the text */
+    width: 100%;
 }
 @media (max-width: 768px) {
     .vertical-nav ul li a {
